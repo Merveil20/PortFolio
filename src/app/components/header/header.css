@@ -3,37 +3,41 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  background: black;
   z-index: 1000;
   transition: all 0.3s ease;
 
   nav {
+    background: black;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem 3rem;
 
-    span img {
-      height: 40px;
-      cursor: pointer;
-    }
+    /* Ligne blanche en dessous */
+    border-bottom: 2px solid #ffffff;
+  }
 
-    ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
+  nav span img {
+    height: 40px;
+    cursor: pointer;
+  }
 
-      li a {
-        text-decoration: none;
-        color: white;
-        font-weight: 500;
-        transition: color 0.2s ease;
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    font-size: 1.5rem;
+  }
 
-        &:hover {
-          color: #3b82f6;
-        }
-      }
-    }
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  nav ul li a:hover {
+    color: #eaf1e8a3;
   }
 
   &.scrolled {
@@ -45,8 +49,85 @@ header {
       color: #333;
 
       &:hover {
-        color: #3b82f6;
+        color: #868d97;
       }
     }
   }
+}
+/* La section principale */
+.G_C {
+  display: flex; /* Met les enfants côte à côte */
+  background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTk3b2s0d2F4c2xiN3QzcWV0OXlndWFoZzN3ZzZmdDhnZm1xamIwMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8PEbUBEwxktyNeqVZ4/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  color: white;
+  padding: 20px;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  flex-direction: column; /* Empile les enfants en colonne */
+  min-height: 100vh; /* Occupe toute la hauteur de la fenêtre */
+  text-align: center; /* Centre le texte */
+}
+
+/*
+/* Section principale */
+
+/* Conteneur texte */
+.texte {
+  display: flex;
+  flex-direction: column; /* Empile les div internes */
+  gap: 20px; /* Espace entre les blocs */
+  max-width: 800px; /* Largeur max pour lisibilité */
+}
+
+/* Titre */
+.title h1 {
+  font-size: 3rem; /* Taille imposante */
+  font-weight: bold; /* Police en gras */
+  margin: 0;
+}
+
+/* Paragraphe */
+.description p {
+  font-size: 2.1rem; /* Texte plus gros */
+  line-height: 1.2; /* Hauteur de ligne pour lisibilité */
+  font-weight: 500; /* Police un peu plus imposante */
+  background: linear-gradient(to bottom, #eaf1e8a3, #dfe8c9);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Logos */
+.logo {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Espace entre les logos */
+}
+
+/* Boutons */
+.btn {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 20px;
+}
+button:hover {
+  background: #7c7e88; /* Couleur plus foncée au survol */
+  transform: scale(1.05); /* Légère mise en avant */
+}
+.title {
+  font-family: 'Lobster', sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
