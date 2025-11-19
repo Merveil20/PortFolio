@@ -1,0 +1,318 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===================== */
+/* NAVBAR */
+/* ===================== */
+
+nav {
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 2px solid #ffffff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+nav span img {
+  height: 40px;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  font-size: 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: #eaf1e8a3;
+}
+
+/* ===================== */
+/* MENU BUTTON (HAMBURGER) */
+/* ===================== */
+
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+/* ===================== */
+/* RESPONSIVE NAV */
+/* ===================== */
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: flex;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 2rem 0;
+    gap: 1.5rem;
+    border-bottom: 2px solid white;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li a {
+    font-size: 1.3rem;
+  }
+}
+
+/* ===================== */
+/* MAIN (fond global) */
+/* ===================== */
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 120px; /* espace sous le nav */
+  position: fixed;
+  left: 0;
+
+  /* Fond animé */
+  background: black;
+  background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2JhdzUyMDY0NjV0azN1aGM0dDAzeHVtZGM1NWN6ZWc5d25wazNrYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AOSwwqVjNZlDO/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* effet parallax */
+}
+
+/* ===================== */
+/* SECTION SKILL */
+/* ===================== */
+
+.skil {
+  padding: 50px;
+  color: #fff;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column; /* colonne pour séparer titre et cards */
+  align-items: center;
+}
+
+.skil h1 {
+  width: 100%;
+  font-size: 3rem; /* titre plus grand */
+  margin-bottom: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Ligne des 4 cards */
+.cards-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* espace plus large entre les cards */
+  flex-wrap: nowrap; /* ❌ pas de retour à la ligne sur desktop */
+  width: 100%;
+}
+
+/* ===================== */
+/* CARDS */
+/* ===================== */
+
+.cards_skill {
+  flex: 1;
+  max-width: 380px; /* ✅ largeur augmentée */
+  background: rgba(255, 255, 255, 0.08); /* effet glass */
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border-radius: 25px;
+  padding: 40px; /* ✅ plus de padding */
+  position: relative;
+  overflow: hidden;
+
+  /* Bordure lumineuse */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15), 0 0 40px rgba(255, 255, 255, 0.1);
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover attractif */
+.cards_skill:hover {
+  transform: translateY(-10px) scale(1.05); /* ✅ zoom plus marqué */
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.35), 0 0 60px rgba(255, 255, 255, 0.2);
+}
+
+/* Titres et descriptions */
+.cards_skill h2 {
+  font-size: 1.6rem; /* ✅ plus grand */
+  margin-bottom: 15px;
+}
+
+.cards_skill p {
+  font-size: 1.1rem; /* ✅ plus grand */
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+/* ===================== */
+/* COMPÉTENCES */
+/* ===================== */
+
+.card {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.card span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.2rem; /* ✅ plus grand */
+}
+
+/* Barre de progression */
+.progress-bar {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 28px; /* ✅ plus haute */
+}
+
+/* Animation de chargement */
+.progress {
+  background: linear-gradient(to right, #3f5bbf, #00c6ff);
+  height: 100%;
+  text-align: right;
+  padding-right: 12px;
+  line-height: 28px;
+  color: #fff;
+  font-size: 1rem; /* ✅ texte plus grand */
+  font-weight: bold;
+
+  /* Animation */
+  width: 0;
+  animation: loadBar 2s forwards;
+}
+
+@keyframes loadBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--progress-width);
+  }
+}
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
+@media (max-width: 1024px) {
+  .cards-row {
+    flex-wrap: wrap; /* ✅ retour à la ligne */
+  }
+  .cards_skill {
+    flex: 1 1 45%; /* 2 cards par ligne sur tablette */
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards_skill {
+    flex: 1 1 100%; /* 1 card par ligne sur mobile */
+  }
+}
+.cards_skill {
+  flex: 1;
+  max-width: 380px;
+  background: rgba(255, 255, 255, 0.08); /* effet glass */
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border-radius: 25px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+
+  /* Bordure lumineuse statique */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15), 0 0 40px rgba(255, 255, 255, 0.1);
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Lumière animée autour du card */
+.cards_skill::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 25px;
+  padding: 2px;
+
+  /* Dégradé monochrome subtil */
+  background: linear-gradient(
+    270deg,
+    rgba(77, 76, 76, 0.6),
+    rgba(255, 255, 255, 0.1),
+    rgba(192, 192, 192, 0.6)
+  );
+  background-size: 400% 400%;
+  z-index: -1;
+
+  animation: moveLight 8s linear infinite;
+}
+
+/* Animation du dégradé */
+@keyframes moveLight {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Hover attractif */
+.cards_skill:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.35), 0 0 60px rgba(255, 255, 255, 0.2);
+}

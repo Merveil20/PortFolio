@@ -9,4 +9,8 @@ export const routes: Routes = [
     path: 'education',
     loadComponent: () => import('./components/education/education'),
   },
+  {
+    path: 'skill',
+    loadComponent: () => import('./components/skill/skill'),
+  },
 ];
