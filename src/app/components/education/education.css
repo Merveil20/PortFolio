@@ -1,4 +1,276 @@
-h1 {
-  color: black;
-  font-size: 4rem;
+/* ===================== */
+/*   NAVIGATION (identique au Home) */
+/* ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===================== */
+/* NAVBAR DESKTOP */
+/* ===================== */
+
+nav {
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 2px solid #ffffff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+nav span img {
+  height: 40px;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  font-size: 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: #eaf1e8a3;
+}
+
+/* ===================== */
+/*   MENU BUTTON (HAMBURGER) */
+/* ===================== */
+
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
+@media (max-width: 768px) {
+  /* Afficher le bouton hamburger */
+  .menu-btn {
+    display: flex;
+  }
+
+  /* Cacher le menu par défaut */
+  nav ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 2rem 0;
+    gap: 1.5rem;
+    border-bottom: 2px solid white;
+  }
+
+  /* Afficher quand menuOpen = true */
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li a {
+    font-size: 1.3rem;
+  }
+}
+
+/* ===================== */
+/*     MAIN (comme Home) */
+/* ===================== */
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 120px; /* espace sous le nav */
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  background: black;
+  background-image: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmk0emk5eTYzZ2hkNzNvbmF0cHRseW8wN3dkM2JibWNvZ2k1bGxwdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xsHs2XeOMBXuU/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ===================== */
+/*   SECTION EDUCATION   */
+/* ===================== */
+
+.education {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 70%;
+  margin-bottom: 50px;
+}
+.title-row span {
+  font-size: 20px;
+  font-weight: 500;
+  color: #e6e6e6;
+}
+.date {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #e6e6e6;
+}
+.univ {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgba(200, 210, 109, 0.85);
+}
+
+/* ==== CARDS Style futuriste (comme HOME) ==== */
+
+.education div {
+  background: rgba(107, 103, 103, 0.749);
+  backdrop-filter: blur(6px);
+  padding: 35px;
+  border-radius: 25px;
+  box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* Flottement */
+.education div:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* === Bord lumineux animé (corrigé et amélioré) === */
+.education div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 300%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, white, transparent);
+  animation: move-light 4s linear infinite;
+}
+
+@keyframes move-light {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+/* ===================== */
+/* IMAGE RONDE PROPRE */
+/* ===================== */
+
+.education img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  padding: 4px;
+}
+
+/* ===================== */
+/* TITRE + DATE SUR LA MÊME LIGNE */
+/* ===================== */
+
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.education h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.education span {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ===================== */
+/* SOUS-TITRE (diplôme) */
+/* ===================== */
+
+.education h3 {
+  margin-top: 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #e6e6e6;
+}
+
+/* ===================== */
+/* PARAGRAPHE (STYLE HOME) */
+/* ===================== */
+
+.education p {
+  margin-top: 20px;
+  padding-left: 20%;
+  padding-right: 20%;
+  text-align: justify;
+  font-size: 1.4rem;
+  line-height: 1.5;
+
+  background: linear-gradient(to bottom, #eaf1e8a3, #dfe8c9);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 400;
+}
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
+@media (max-width: 768px) {
+  .education {
+    width: 90%;
+  }
+
+  .title-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .education p {
+    padding: 0;
+  }
+
+  .education img {
+    width: 100px;
+    height: 100px;
+  }
 }

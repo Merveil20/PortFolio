@@ -1,1 +1,49 @@
-<h1>Partie education</h1>
+<main>
+  <nav>
+    <span><img src="assets/images/logo3.png" alt="logo site web" /></span>
+    <div class="menu-btn" (click)="toggleMenu()">
+      <span><a routerLink="/home">Home</a></span>
+      <span><a routerLink="/education">Education</a></span>
+      <span><a routerLink="/skill">Skill</a></span>
+      <span><a routerLink="/project">Project</a></span>
+      <span><a routerLink="/projection">Projection</a></span>
+      <span><a routerLink="/contact">Contact-Me</a></span>
+    </div>
+    <ul [class.active]="menuOpen">
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/education">Education</a></li>
+      <li><a routerLink="/skill">Skill</a></li>
+      <li><a routerLink="/project">Project</a></li>
+      <li><a routerLink="/projection">Projection</a></li>
+      <li><a routerLink="/contact">Contact-Me</a></li>
+    </ul>
+  </nav>
+  <section class="education">
+    <div>
+      <div class="title-row">
+        <img src="assets/images/udem.gif" alt="Université de Moncton" />
+        <h2>Université de Moncton</h2>
+        <span class="date"> de janvier 2024 à avril 2026</span>
+      </div>
+      <h3>Baccalauréat en informatique appliquée</h3>
+      <p>
+        Durant ma periode universitaire, j'ai effectué un Baccalauréat en informatique appliquée à
+        <span class="univ">L'Université de Moncton </span>où j'ai largement apprise de nombreuse
+        notions de tout bord qui je pense boosterons ma carrierre professionnel.
+      </p>
+    </div>
+    <div>
+      <div class="title-row">
+        <img src="assets/images/iuc.webp" alt="IUC" />
+        <h2>Institut Universitaire de la Côte</h2>
+        <span class="date"> de octobre 2019 à août 2022</span>
+      </div>
+      <h3>BTS en GL & Licence en GL</h3>
+      <p>
+        Au cours de cette période, j'ai introduis une formation univeristaire en génie logiciel à
+        <span class="univ">IUC</span> où j'ai commence à me familiariser avec le monde
+        professionnel.
+      </p>
+    </div>
+  </section>
+</main>

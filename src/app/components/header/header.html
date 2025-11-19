@@ -1,13 +1,21 @@
 <header>
   <nav>
     <span><img src="assets/images/logo3.png" alt="logo site web" /></span>
-    <ul>
-      <li><a href="">Home</a></li>
-      <li><a href="">Education</a></li>
-      <li><a href="">Skill</a></li>
-      <li><a href="">Project</a></li>
-      <li><a href="">Projection</a></li>
-      <li><a href="">Contact-Me</a></li>
+    <div class="menu-btn" (click)="toggleMenu()">
+      <span><a routerLink="/home">Home</a></span>
+      <span><a routerLink="/education">Education</a></span>
+      <span><a routerLink="/skill">Skill</a></span>
+      <span><a routerLink="/project">Project</a></span>
+      <span><a routerLink="/projection">Projection</a></span>
+      <span><a routerLink="/contact">Contact-Me</a></span>
+    </div>
+    <ul [class.active]="menuOpen">
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/education">Education</a></li>
+      <li><a routerLink="/skill">Skill</a></li>
+      <li><a routerLink="/project">Project</a></li>
+      <li><a routerLink="/projection">Projection</a></li>
+      <li><a routerLink="/contact">Contact-Me</a></li>
     </ul>
   </nav>
   <main>
