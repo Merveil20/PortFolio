@@ -13,4 +13,16 @@ export const routes: Routes = [
     path: 'skill',
     loadComponent: () => import('./components/skill/skill'),
   },
+  {
+    path: 'project',
+    loadComponent: () => import('./components/project/project'),
+  },
+  {
+    path: 'contact',
+    loadComponent: () => import('./components/contact/contact'),
+  },
+  {
+    path: '**',
+    redirectTo: '/home',
+  },
 ];

@@ -1,0 +1,68 @@
+<main>
+  <nav>
+    <span><img src="assets/images/logo3.png" alt="logo site web" /></span>
+    <div class="menu-btn" (click)="toggleMenu()">
+      <span><a routerLink="/home">Home</a></span>
+      <span><a routerLink="/education">Education</a></span>
+      <span><a routerLink="/skill">Skill</a></span>
+      <span><a routerLink="/project">Project</a></span>
+      <span><a routerLink="/projection">Projection</a></span>
+      <span><a routerLink="/contact">Contact-Me</a></span>
+    </div>
+    <ul [class.active]="menuOpen">
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/education">Education</a></li>
+      <li><a routerLink="/skill">Skill</a></li>
+      <li><a routerLink="/project">Project</a></li>
+      <li><a routerLink="/contact">Contact-Me</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <div>
+      <h1><u>My Projects</u></h1>
+
+      <div class="card first">
+        <img
+          src="https://img.freepik.com/photos-gratuite/analyse-donnees-entreprise_53876-95296.jpg?semt=ais_hybrid&w=740&q=80"
+          alt="Analyse des données"
+        />
+        <h3 class="title">Analyse des données</h3>
+        <p>
+          Développement d'une architecture de collecte de données et de la visualisation de ces
+          données avec Python.
+        </p>
+      </div>
+
+      <div class="card second">
+        <img src="assets/images/logo_peakmotion.png" alt="Peakmotion" />
+        <h3 class="title">Peakmotion</h3>
+        <p>
+          Peakmotion est une application mobile développée en Flutter et NestJS dans le cadre d'un
+          stage avec la Fécum de l'Université Moncton.
+        </p>
+      </div>
+
+      <div class="card third">
+        <img
+          src="https://www.universfreebox.com/wp-content/uploads/2022/08/canalplus7-800x450-c-default-800x450-c-default-800x450-c-default-800x450-c-default-800x450-c-default1-800x450-c-default1-800x450-c-default.jpg"
+          alt="Clone Canal+"
+        />
+        <h3 class="title">Clone canal+</h3>
+        <p>Réalisation d’un clone du site Canal+ avec HTML/CSS/JavaScript et Tailwind CSS.</p>
+      </div>
+
+      <div class="card fourten">
+        <img
+          src="https://cdn.pixabay.com/photo/2016/11/20/08/58/books-1842261_640.jpg"
+          alt="Librairie"
+        />
+        <h3 class="title">Librairie</h3>
+        <p>
+          Projet de librairie en ligne avec .NET, HTML/Bootstrap incluant modules de connexion et
+          CRUD sur les livres.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
