@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './education.css',
 })
 export default class Education {
-  menuOpen = false;
+  menuOpen: boolean = false;
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;

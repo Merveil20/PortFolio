@@ -1,1 +1,93 @@
-<p>contact works!</p>
+<body>
+  <main>
+    <nav>
+      <span
+        ><a routerLink="/home"><img src="assets/images/logo3.png" alt="logo site web" /></a
+      ></span>
+      <div class="menu-btn" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul [class.active]="menuOpen">
+        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/education">Education</a></li>
+        <li><a routerLink="/skill">Skill</a></li>
+        <li><a routerLink="/project">Project</a></li>
+        <li><a routerLink="/contact">Contact-Me</a></li>
+      </ul>
+    </nav>
+    <section>
+      <div class="title">
+        <h2>Contact-Me</h2>
+      </div>
+      <div class="form">
+        <form [formGroup]="formgroup" (ngSubmit)="onSubmit()">
+          <div>
+            <input
+              id="name"
+              type="text"
+              placeholder="Veuillez entrer votre nom"
+              formControlName="NameControl"
+              [class.is-invalid]="isInvalidAndTouchedOrDirty(formgroup.controls.NameControl)"
+            />
+            <small
+              class="text-danger"
+              *ngIf="isInvalidAndTouchedOrDirty(formgroup.controls.NameControl)"
+            >
+              <ng-container *ngIf="formgroup.controls.NameControl.hasError('required')"
+                >Le nom est requis</ng-container
+              >
+              <ng-container *ngIf="formgroup.controls.NameControl.hasError('minlength')"
+                >Le nom doit avoir 03 caratères minimum</ng-container
+              >
+            </small>
+          </div>
+          <div>
+            <input
+              id="mail"
+              type="email"
+              placeholder="veuillez entrer votre courriel"
+              formControlName="MailControl"
+              [class.is-invalid]="isInvalidAndTouchedOrDirty(formgroup.controls.MailControl)"
+            />
+            <small
+              class="text-danger"
+              *ngIf="isInvalidAndTouchedOrDirty(formgroup.controls.MailControl)"
+            >
+              <ng-container *ngIf="formgroup.controls.MailControl.hasError('required')"
+                >l'email est requis</ng-container
+              >
+              <ng-container *ngIf="formgroup.controls.MailControl.hasError('email')"
+                >l'email est incorrect</ng-container
+              >
+            </small>
+          </div>
+          <div>
+            <textarea
+              name="commentaire"
+              id="commentaire"
+              placeholder="Laissez-moi un Message"
+              formControlName="CommentControl"
+              [class.is-invalid]="isInvalidAndTouchedOrDirty(formgroup.controls.CommentControl)"
+            ></textarea>
+            <small
+              class="text-danger"
+              *ngIf="isInvalidAndTouchedOrDirty(formgroup.controls.CommentControl)"
+            >
+              <ng-container *ngIf="formgroup.controls.CommentControl.hasError('required')"
+                >le commentaire est requis</ng-container
+              >
+              <ng-container *ngIf="formgroup.controls.CommentControl.hasError('minlength')"
+                >le commentaire doit contenir au 20 caractères</ng-container
+              >
+            </small>
+          </div>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>

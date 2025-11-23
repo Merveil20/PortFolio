@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './skill.css',
 })
 export default class Skill {
-  menuOpen = false;
+  menuOpen: boolean = false;
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;

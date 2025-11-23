@@ -1,149 +1,153 @@
-<main>
-  <nav>
-    <span><img src="assets/images/logo3.png" alt="logo site web" /></span>
-    <div class="menu-btn" (click)="toggleMenu()">
-      <span><a routerLink="/home">Home</a></span>
-      <span><a routerLink="/education">Education</a></span>
-      <span><a routerLink="/skill">Skill</a></span>
-      <span><a routerLink="/project">Project</a></span>
-      <span><a routerLink="/contact">Contact-Me</a></span>
-    </div>
-    <ul [class.active]="menuOpen">
-      <li><a routerLink="/home">Home</a></li>
-      <li><a routerLink="/education">Education</a></li>
-      <li><a routerLink="/skill">Skill</a></li>
-      <li><a routerLink="/project">Project</a></li>
-      <li><a routerLink="/contact">Contact-Me</a></li>
-    </ul>
-  </nav>
-  <section class="skil">
-    <h1>Skill</h1>
-    <div class="cards-row">
-      <!-- Card 1 : Développement Web/Mobile -->
-      <div class="cards_skill">
-        <h2>Développement Web/Mobile</h2>
-        <p>This is my main activity everytime, so I invest more time on this domain</p>
-        <div class="card">
-          <span>Javascript</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 70%">70%</div>
-          </div>
-        </div>
-        <div class="card">
-          <span>NestJS</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 70%">70%</div>
-          </div>
-        </div>
-        <div class="card">
-          <span>Flutter</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 70%">70%</div>
-          </div>
-        </div>
-        <div class="card">
-          <span>Angular</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 70%">70%</div>
-          </div>
-        </div>
-        <div class="card">
-          <span>WordPress</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 80%">80%</div>
-          </div>
-        </div>
+<body>
+  <main>
+    <nav>
+      <span
+        ><a href="/home"><img src="assets/images/logo3.png" alt="logo site web" /></a
+      ></span>
+      <div class="menu-btn" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
+      <ul [class.active]="menuOpen">
+        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/education">Education</a></li>
+        <li><a routerLink="/skill">Skill</a></li>
+        <li><a routerLink="/project">Project</a></li>
+        <li><a routerLink="/contact">Contact-Me</a></li>
+      </ul>
+    </nav>
+    <section class="skil">
+      <h1>Skill</h1>
+      <div class="cards-row">
+        <!-- Card 1 : Développement Web/Mobile -->
+        <div class="cards_skill">
+          <h2>Développement Web/Mobile</h2>
+          <p>This is my main activity everytime, so I invest more time on this domain</p>
+          <div class="card">
+            <span>Javascript</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 70%">70%</div>
+            </div>
+          </div>
+          <div class="card">
+            <span>NestJS</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 70%">70%</div>
+            </div>
+          </div>
+          <div class="card">
+            <span>Flutter</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 70%">70%</div>
+            </div>
+          </div>
+          <div class="card">
+            <span>Angular</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 70%">70%</div>
+            </div>
+          </div>
+          <div class="card">
+            <span>WordPress</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 80%">80%</div>
+            </div>
+          </div>
+        </div>
 
-      <!-- Card 2 : Cybersécurité -->
-      <div class="cards_skill">
-        <h2>Cybersécurité</h2>
-        <p>Ensuring systems and applications are secure against threats</p>
-        <div class="card">
-          <span>Network Security</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 65%">65%</div>
+        <!-- Card 2 : Cybersécurité -->
+        <div class="cards_skill">
+          <h2>Cybersécurité</h2>
+          <p>Ensuring systems and applications are secure against threats</p>
+          <div class="card">
+            <span>Network Security</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 65%">65%</div>
+            </div>
+          </div>
+          <div class="card">
+            <span>Penetration Testing</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 50%">50%</div>
+            </div>
+          </div>
+          <div class="card">
+            <span>Cryptography</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 40%">40%</div>
+            </div>
+          </div>
+          <div class="card">
+            <span>Incident Response</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 60%">60%</div>
+            </div>
           </div>
         </div>
-        <div class="card">
-          <span>Penetration Testing</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 50%">50%</div>
-          </div>
-        </div>
-        <div class="card">
-          <span>Cryptography</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 40%">40%</div>
-          </div>
-        </div>
-        <div class="card">
-          <span>Incident Response</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 60%">60%</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Card 3 : Data Analyst -->
-      <div class="cards_skill">
-        <h2>Data Analyst</h2>
-        <p>Analyzing and interpreting data to support decision-making</p>
-        <div class="card">
-          <span>SQL</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 75%">75%</div>
+        <!-- Card 3 : Data Analyst -->
+        <div class="cards_skill">
+          <h2>Data Analyst</h2>
+          <p>Analyzing and interpreting data to support decision-making</p>
+          <div class="card">
+            <span>SQL</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 75%">75%</div>
+            </div>
+          </div>
+          <div class="card">
+            <span>Python (Pandas/Numpy)</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 70%">70%</div>
+            </div>
+          </div>
+          <div class="card">
+            <span>Data Visualization (Tableau/PowerBI)</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 65%">65%</div>
+            </div>
+          </div>
+          <div class="card">
+            <span>Machine Learning Basics</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 50%">50%</div>
+            </div>
           </div>
         </div>
-        <div class="card">
-          <span>Python (Pandas/Numpy)</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 70%">70%</div>
-          </div>
-        </div>
-        <div class="card">
-          <span>Data Visualization (Tableau/PowerBI)</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 65%">65%</div>
-          </div>
-        </div>
-        <div class="card">
-          <span>Machine Learning Basics</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 50%">50%</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Card 4 : Support IT -->
-      <div class="cards_skill">
-        <h2>Support IT</h2>
-        <p>Providing technical assistance and maintaining IT infrastructure</p>
-        <div class="card">
-          <span>Helpdesk Support</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 80%">80%</div>
+        <!-- Card 4 : Support IT -->
+        <div class="cards_skill">
+          <h2>Support IT</h2>
+          <p>Providing technical assistance and maintaining IT infrastructure</p>
+          <div class="card">
+            <span>Helpdesk Support</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 80%">80%</div>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <span>System Administration</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 70%">70%</div>
+          <div class="card">
+            <span>System Administration</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 70%">70%</div>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <span>Hardware Maintenance</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 60%">60%</div>
+          <div class="card">
+            <span>Hardware Maintenance</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 60%">60%</div>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <span>Customer Support</span>
-          <div class="progress-bar">
-            <div class="progress" style="--progress-width: 85%">85%</div>
+          <div class="card">
+            <span>Customer Support</span>
+            <div class="progress-bar">
+              <div class="progress" style="--progress-width: 85%">85%</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
+</body>

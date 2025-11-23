@@ -1,0 +1,274 @@
+/* ===================== */
+/* GLOBAL & BODY */
+/* ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: black;
+  /* Nous déplaçons l'image de fond ici, mais rendons le BODY non-fixe */
+  background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHM4aGo4YXIxbnhnNjZubzVzOTF5aTkyZ3ljZXBrN3Y3OXVydm9rNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3q2RgN7WUjeUUXm0/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Rendre l'image fixe si le contenu est court */
+}
+
+/* ===================== */
+/* NAVBAR & RESPONSIVE NAV (Styles conservés) */
+/* ===================== */
+nav {
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 2px solid #ffffff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+nav span img {
+  height: 40px;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  font-size: 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: #eaf1e8a3;
+}
+
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: flex;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 2rem 0;
+    gap: 1.5rem;
+    border-bottom: 2px solid white;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li a {
+    font-size: 1.3rem;
+  }
+}
+
+/* ===================== */
+/* SECTION CONTACT (Réalignement pour le défilement) */
+/* ===================== */
+section {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 50px; /* Ajout d'un padding en bas pour la lisibilité */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centre le contenu verticalement si l'écran est grand */
+
+  position: relative; /* IMPORTANT: Permet le défilement */
+  left: 0;
+  background: transparent; /* Supprimer l'arrière-plan de la section car il est sur le body */
+}
+
+/* ===================== */
+/* TITRE (Style NEON) */
+/* ===================== */
+section .title h2 {
+  font-size: 3.5rem; /* Augmenté pour l'impact */
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 50px; /* Plus d'espace sous le titre */
+
+  /* Effet NEON */
+  background: linear-gradient(90deg, #b3ccff, #ffffff, #88d4e9);
+  -webkit-background-clip: text;
+  color: transparent;
+  /* Ombre néon bleu plus prononcée */
+  text-shadow: 0 0 15px rgba(100, 166, 196, 0.8), 0 0 20px rgba(100, 166, 196, 0.5);
+}
+
+/* ===================== */
+/* FORMULAIRE (Liquid Glass Néon) */
+/* ===================== */
+.form {
+  width: 90%;
+  max-width: 600px;
+  /* Glassmorphism conservé */
+  background: rgba(255, 255, 255, 0.08); /* Plus de transparence pour un meilleur Glassmorphism */
+  backdrop-filter: blur(15px) saturate(180%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Bordure légère */
+  padding: 40px; /* Plus de padding */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); /* Ombre plus sombre */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Augmenté l'espacement */
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 15px 1rem; /* Plus grand padding */
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure subtile */
+  outline: none;
+  font-size: 1.1rem;
+  background: rgba(0, 0, 0, 0.5); /* Fond plus sombre dans les champs */
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: #c4d0da; /* Placeholder plus clair */
+  opacity: 0.7;
+  font-style: normal; /* Retirer l'italique */
+}
+
+/* Focus : effet néon bleu */
+.form input:focus,
+.form textarea:focus {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: #88d4e9; /* Bordure bleu clair */
+  box-shadow: 0 0 10px rgba(136, 212, 233, 0.8); /* Lueur néon */
+  transform: none; /* Supprimer la transformation scale */
+}
+
+/* Validation et Erreurs */
+.form input.is-invalid,
+.form textarea.is-invalid {
+  border-color: #ff4d4d !important;
+  box-shadow: 0 0 8px rgba(255, 77, 77, 0.8) !important;
+}
+
+.form small.text-danger {
+  color: #ff7777; /* Rouge néon */
+  font-size: 0.9rem;
+  text-align: left;
+  display: block; /* S'assurer qu'il prend sa propre ligne */
+  margin-top: 5px;
+  text-shadow: 0 0 3px rgba(255, 77, 77, 0.5);
+}
+
+/* ===================== */
+/* BOUTON (Style NEON) */
+/* ===================== */
+.form button {
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  /* Style Néon / Dégradé Bleu */
+  background: linear-gradient(90deg, #64a6c4, #b3ccff);
+  color: #000;
+  box-shadow: 0 0 10px rgba(179, 204, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.form button:hover {
+  transform: translateY(-2px);
+  /* Lueur plus intense au survol */
+  box-shadow: 0 0 20px rgba(179, 204, 255, 0.8);
+  background: linear-gradient(90deg, #b3ccff, #64a6c4);
+}
+
+/* ===================== */
+/* RESPONSIVE FINAL */
+/* ===================== */
+@media (max-width: 768px) {
+  section .title h2 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+  }
+  .form {
+    padding: 30px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  section .title h2 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+  .form {
+    padding: 20px 15px;
+  }
+  .form input,
+  .form textarea {
+    font-size: 1rem;
+    padding: 12px 1rem;
+  }
+  .form button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}

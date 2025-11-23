@@ -74,7 +74,7 @@ nav ul li a:hover {
   nav ul {
     position: absolute;
     top: 70px;
-    right: 0;
+    left: 0; /* pour couvrir toute la largeur */
     background: rgba(0, 0, 0, 0.95);
     width: 100%;
     flex-direction: column;
@@ -83,6 +83,7 @@ nav ul li a:hover {
     padding: 2rem 0;
     gap: 1.5rem;
     border-bottom: 2px solid white;
+    z-index: 998;
   }
 
   nav ul.active {
@@ -109,6 +110,8 @@ nav ul li a:hover {
   flex-direction: column; /* Empile les enfants en colonne */
   min-height: 100vh; /* Occupe toute la hauteur de la fenêtre */
   text-align: center; /* Centre le texte */
+  position: fixed;
+  left: 0;
 }
 
 /*

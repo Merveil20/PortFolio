@@ -1,12 +1,14 @@
 <header>
   <nav>
-    <span><img src="assets/images/logo3.png" alt="logo site web" /></span>
+    <span>
+      <a routerLink="/home"><img src="assets/images/logo3.png" alt="logo site web" /></a
+    ></span>
     <div class="menu-btn" (click)="toggleMenu()">
-      <span><a routerLink="/home">Home</a></span>
-      <span><a routerLink="/education">Education</a></span>
-      <span><a routerLink="/skill">Skill</a></span>
-      <span><a routerLink="/project">Project</a></span>
-      <span><a routerLink="/contact">Contact-Me</a></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
     <ul [class.active]="menuOpen">
       <li><a routerLink="/home">Home</a></li>
@@ -29,18 +31,18 @@
           </p>
         </div>
         <div class="logo">
-          <a href="">
+          <a href="https://www.linkedin.com/in/merveil-djuidje-473242297/">
             <img src="https://img.icons8.com/?size=100&id=8808&format=png&color=3F5BBF" alt=""
           /></a>
-          <a href=""
+          <a href="https://github.com/Merveil20?tab=repositories"
             ><img src="https://img.icons8.com/?size=100&id=12599&format=png&color=ffffff" alt=""
           /></a>
-          <a
+          <a href="mailto:djudjemerveil20@gnail.com"
             ><img src="https://img.icons8.com/?size=100&id=53388&format=png&color=D73627" alt=""
           /></a>
         </div>
         <div class="btn">
-          <button>Contact-Me</button>
+          <a routerLink="/contact"><button>Contact-Me</button></a>
           <button>Download My RESUME</button>
         </div>
       </div>

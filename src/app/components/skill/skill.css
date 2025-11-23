@@ -1,11 +1,32 @@
+/* ===================== */
+/* RÉINITIALISATION & BODY (Arrière-plan total) */
+/* ===================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* Utilisation d'une police plus moderne et lisible (si incluse dans le projet) */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  background-image: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3ljNG4wcnhoZ2tvaWt2anA1cXhhb3FxbzNncGZ2dXMzZjVxanc0ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aONTLt4KmKeKXWAgy0/giphy.gif');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* ===================== */
-/* NAVBAR */
+/* NAVBAR DESKTOP & RESPONSIVE (Styles conservés et optimisés) */
 /* ===================== */
 
 nav {
@@ -45,10 +66,6 @@ nav ul li a:hover {
   color: #eaf1e8a3;
 }
 
-/* ===================== */
-/* MENU BUTTON (HAMBURGER) */
-/* ===================== */
-
 .menu-btn {
   display: none;
   flex-direction: column;
@@ -64,18 +81,13 @@ nav ul li a:hover {
   transition: 0.3s ease;
 }
 
-/* ===================== */
-/* RESPONSIVE NAV */
-/* ===================== */
-
 @media (max-width: 768px) {
   .menu-btn {
     display: flex;
   }
-
   nav ul {
     position: absolute;
-    top: 70px;
+    top: 66px;
     right: 0;
     background: rgba(0, 0, 0, 0.95);
     width: 100%;
@@ -86,195 +98,103 @@ nav ul li a:hover {
     gap: 1.5rem;
     border-bottom: 2px solid white;
   }
-
   nav ul.active {
     display: flex;
   }
-
   nav ul li a {
     font-size: 1.3rem;
   }
 }
 
 /* ===================== */
-/* MAIN (fond global) */
+/* MAIN (Correction de la position) */
 /* ===================== */
 
 main {
   width: 100%;
   min-height: 100vh;
-  padding-top: 120px; /* espace sous le nav */
-  position: fixed;
+  padding-top: 100px;
+  position: relative;
   left: 0;
 
-  /* Fond animé */
-  background: black;
-  background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2JhdzUyMDY0NjV0azN1aGM0dDAzeHVtZGM1NWN6ZWc5d25wazNrYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AOSwwqVjNZlDO/giphy.gif');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* effet parallax */
+  display: flex;
+  justify-content: center;
 }
 
 /* ===================== */
-/* SECTION SKILL */
+/* SECTION SKILL (Titre néon) */
 /* ===================== */
 
 .skil {
-  padding: 50px;
+  padding: 50px 0;
   color: #fff;
   text-align: center;
-
   display: flex;
-  flex-direction: column; /* colonne pour séparer titre et cards */
+  flex-direction: column;
   align-items: center;
+  width: 90%;
+  max-width: 1300px; /* Légèrement élargi sur les très grands écrans */
 }
 
 .skil h1 {
   width: 100%;
-  font-size: 3rem; /* titre plus grand */
-  margin-bottom: 50px;
-  font-weight: bold;
+  font-size: 3.8rem; /* Titre plus grand */
+  margin-bottom: 60px; /* Plus d'espace */
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 7px; /* Plus d'espacement pour l'effet néon */
+
+  /* Effet NEON */
+  background: linear-gradient(90deg, #b3ccff, #ffffff, #88d4e9);
+  -webkit-background-clip: text;
+  color: transparent;
+  /* Ombre néon bleu plus prononcée */
+  text-shadow: 0 0 15px rgba(100, 166, 196, 0.8), 0 0 20px rgba(100, 166, 196, 0.5);
 }
 
 /* Ligne des 4 cards */
 .cards-row {
   display: flex;
   justify-content: center;
-  gap: 30px; /* espace plus large entre les cards */
-  flex-wrap: nowrap; /* ❌ pas de retour à la ligne sur desktop */
+  gap: 30px;
+  flex-wrap: wrap;
   width: 100%;
+  margin-bottom: 50px;
 }
 
 /* ===================== */
-/* CARDS */
+/* CARDS (Style Glassmorphism & Lueur) */
 /* ===================== */
 
 .cards_skill {
-  flex: 1;
-  max-width: 380px; /* ✅ largeur augmentée */
-  background: rgba(255, 255, 255, 0.08); /* effet glass */
-  backdrop-filter: blur(12px) saturate(150%);
-  -webkit-backdrop-filter: blur(12px) saturate(150%);
-  border-radius: 25px;
-  padding: 40px; /* ✅ plus de padding */
+  flex: 1 1 22%; /* Permet 4 cartes par ligne sur desktop large */
+  min-width: 280px; /* Taille minimale pour éviter qu'elles ne soient trop petites */
+  max-width: 300px; /* Taille maximale conservée */
+
+  /* Style Glassmorphism */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+
+  border-radius: 15px;
+  padding: 30px;
   position: relative;
   overflow: hidden;
 
-  /* Bordure lumineuse */
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15), 0 0 40px rgba(255, 255, 255, 0.1);
+  /* Bordure et ombre douce initiale */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: all 0.4s ease;
 }
 
-/* Hover attractif */
+/* Hover : Flottement et Lueur */
 .cards_skill:hover {
-  transform: translateY(-10px) scale(1.05); /* ✅ zoom plus marqué */
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.35), 0 0 60px rgba(255, 255, 255, 0.2);
+  transform: translateY(-10px); /* Flottement légèrement plus marqué */
+  box-shadow: 0 0 35px rgba(136, 212, 233, 0.6); /* Lueur plus intense */
 }
 
-/* Titres et descriptions */
-.cards_skill h2 {
-  font-size: 1.6rem; /* ✅ plus grand */
-  margin-bottom: 15px;
-}
-
-.cards_skill p {
-  font-size: 1.1rem; /* ✅ plus grand */
-  margin-bottom: 30px;
-  color: #ccc;
-}
-
-/* ===================== */
-/* COMPÉTENCES */
-/* ===================== */
-
-.card {
-  margin-bottom: 25px;
-  text-align: left;
-}
-
-.card span {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 10px;
-  font-size: 1.2rem; /* ✅ plus grand */
-}
-
-/* Barre de progression */
-.progress-bar {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  overflow: hidden;
-  height: 28px; /* ✅ plus haute */
-}
-
-/* Animation de chargement */
-.progress {
-  background: linear-gradient(to right, #3f5bbf, #00c6ff);
-  height: 100%;
-  text-align: right;
-  padding-right: 12px;
-  line-height: 28px;
-  color: #fff;
-  font-size: 1rem; /* ✅ texte plus grand */
-  font-weight: bold;
-
-  /* Animation */
-  width: 0;
-  animation: loadBar 2s forwards;
-}
-
-@keyframes loadBar {
-  from {
-    width: 0;
-  }
-  to {
-    width: var(--progress-width);
-  }
-}
-
-/* ===================== */
-/* RESPONSIVE */
-/* ===================== */
-
-@media (max-width: 1024px) {
-  .cards-row {
-    flex-wrap: wrap; /* ✅ retour à la ligne */
-  }
-  .cards_skill {
-    flex: 1 1 45%; /* 2 cards par ligne sur tablette */
-    max-width: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .cards_skill {
-    flex: 1 1 100%; /* 1 card par ligne sur mobile */
-  }
-}
-.cards_skill {
-  flex: 1;
-  max-width: 380px;
-  background: rgba(255, 255, 255, 0.08); /* effet glass */
-  backdrop-filter: blur(12px) saturate(150%);
-  -webkit-backdrop-filter: blur(12px) saturate(150%);
-  border-radius: 25px;
-  padding: 40px;
-  position: relative;
-  overflow: hidden;
-
-  /* Bordure lumineuse statique */
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15), 0 0 40px rgba(255, 255, 255, 0.1);
-
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-/* Lumière animée autour du card */
+/* Lumière animée autour du card (conservée) */
 .cards_skill::before {
   content: '';
   position: absolute;
@@ -282,10 +202,8 @@ main {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  border-radius: 25px;
+  border-radius: 15px;
   padding: 2px;
-
-  /* Dégradé monochrome subtil */
   background: linear-gradient(
     270deg,
     rgba(77, 76, 76, 0.6),
@@ -294,11 +212,10 @@ main {
   );
   background-size: 400% 400%;
   z-index: -1;
-
   animation: moveLight 8s linear infinite;
 }
 
-/* Animation du dégradé */
+/* Animation du dégradé (Lumière animée) */
 @keyframes moveLight {
   0% {
     background-position: 0% 50%;
@@ -311,8 +228,113 @@ main {
   }
 }
 
-/* Hover attractif */
-.cards_skill:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.35), 0 0 60px rgba(255, 255, 255, 0.2);
+/* Titres et descriptions */
+.cards_skill h2 {
+  font-size: 1.6rem; /* Légèrement réduit pour l'espace */
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #b3ccff;
+  text-shadow: 0 0 8px rgba(179, 204, 255, 0.7); /* Lueur H2 plus marquée */
+}
+
+.cards_skill p {
+  font-size: 1rem; /* Légèrement réduit pour la lisibilité */
+  margin-bottom: 25px;
+  color: #c4d0da;
+}
+
+/* ===================== */
+/* COMPÉTENCES (Barres de progression) */
+/* ===================== */
+
+.card {
+  margin-bottom: 20px; /* Réduit légèrement l'espace */
+  text-align: left;
+}
+
+.card span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1rem; /* Légèrement réduit */
+  color: #ffffff; /* Assure que le texte est blanc */
+}
+
+.progress-bar {
+  background: rgba(255, 255, 255, 0.15); /* Arrière-plan plus visible */
+  border-radius: 8px;
+  overflow: hidden;
+  height: 18px; /* Légèrement réduit pour l'élégance */
+}
+
+.progress {
+  background: linear-gradient(90deg, #64a6c4, #b3ccff);
+  height: 100%;
+  text-align: right;
+  padding-right: 8px;
+  line-height: 18px;
+  color: #000;
+  font-size: 0.75rem; /* Réduit la taille du pourcentage */
+  font-weight: bold;
+
+  /* Lueur subtile sur la barre de progression */
+  box-shadow: 0 0 5px rgba(179, 204, 255, 0.5);
+
+  width: 0;
+  animation: loadBar 2s forwards;
+}
+
+/* Animation de chargement */
+@keyframes loadBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--progress-width);
+  }
+}
+
+/* ===================== */
+/* RESPONSIVE FINAL ET OPTIMISÉ */
+/* ===================== */
+
+/* Transition 4 colonnes (desktop large) à 3 colonnes */
+@media (max-width: 1350px) {
+  .cards_skill {
+    flex: 1 1 30%; /* 3 cartes par ligne */
+    max-width: 350px;
+  }
+}
+
+/* Transition 3 colonnes à 2 colonnes (tablette/laptop) */
+@media (max-width: 1024px) {
+  .skil h1 {
+    font-size: 3rem;
+  }
+  .cards-row {
+    gap: 25px;
+  }
+  .cards_skill {
+    flex: 1 1 45%; /* 2 cards par ligne */
+    max-width: none;
+    min-width: 300px;
+  }
+}
+
+/* Transition 2 colonnes à 1 colonne (mobile) */
+@media (max-width: 650px) {
+  .skil h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+  .cards-row {
+    gap: 20px;
+  }
+  .cards_skill {
+    flex: 1 1 100%; /* 1 card par ligne */
+    max-width: 400px; /* Limiter la largeur sur mobile */
+  }
+  .skil {
+    padding: 30px 10px;
+  }
 }

@@ -1,5 +1,5 @@
 /* ===================== */
-/* GLOBAL */
+/* GLOBAL & BASE */
 /* ===================== */
 * {
   margin: 0;
@@ -8,8 +8,19 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: black; /* S'assure que le fond noir est défini */
+  margin: 0;
+  padding: 0;
+}
+
 /* ===================== */
-/* NAVBAR */
+/* NAVBAR & RESPONSIVE NAV (Styles conservés) */
 /* ===================== */
 nav {
   background: black;
@@ -48,9 +59,6 @@ nav ul li a:hover {
   color: #eaf1e8a3;
 }
 
-/* ===================== */
-/* MENU BUTTON */
-/* ===================== */
 .menu-btn {
   display: none;
   flex-direction: column;
@@ -66,9 +74,6 @@ nav ul li a:hover {
   transition: 0.3s ease;
 }
 
-/* ===================== */
-/* RESPONSIVE NAV */
-/* ===================== */
 @media (max-width: 768px) {
   .menu-btn {
     display: flex;
@@ -98,162 +103,214 @@ nav ul li a:hover {
 }
 
 /* ===================== */
-/* SECTION */
+/* MAIN & SECTION (Ajustement de la mise en page) */
 /* ===================== */
-section {
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 100px; /* Espace pour la barre de navigation */
+  position: relative;
+  left: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 2rem;
-  background-image: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2t3ZWJkazEyeW9qaHN2NDhhd3B4bXJ2b2M1NG9sYTgyYWF6dGNoeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QdYVeDStxnrvfpmvef/giphy.gif');
+  /* L'arrière-plan du BODY (non-fixe) doit couvrir le reste de la page */
+}
+
+section {
+  /* Supprimez les propriétés de positionnement absolu/fixe et min-height: 100vh */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Aligner en haut du padding-top */
+  width: 100%;
+  padding: 0 1rem 50px 1rem; /* Padding pour le contenu, surtout en bas */
+
+  /* Arrière-plan géré par le body */
+  /* Nous devons déplacer le background-image du body pour éviter le chevauchement avec la barre de nav */
+}
+
+/* On applique l'image de fond et ses propriétés de fixation directement au body */
+body {
+  background: black;
+  background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3VhaWV2OHgzMWw5ZmI4eTVqM3dmNnc2dGFmeXQ4Y295dGZ1OTMwOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UYBDCJjwOd9Re/giphy.gif');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed; /* Rendre l'image fixe */
   background-repeat: no-repeat;
-  position: fixed;
-  left: 0;
 }
 
-/* Conteneur de la grille */
+/* Conteneur de la grille (limiteur de largeur) */
 section > div {
-  display: flex;
+  width: 100%;
+  max-width: 1200px; /* Limite la largeur de la grille */
+  display: flex; /* Utilisé comme conteneur avant la grille */
   flex-direction: column;
   align-items: center;
-  width: 100%;
-}
-
-/* Titre principal */
-section h1 {
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  color: #ffffff;
-  font-weight: 700;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-section h1:hover {
-  color: #ffd700;
-  transform: scale(1.05);
+  gap: 30px; /* Espacement par défaut entre les cartes sur mobile */
 }
 
 /* ===================== */
-/* CARDS */
+/* TITRE PRINCIPAL (Style NEON) */
+/* ===================== */
+
+section h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 3.5rem;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+
+  /* Effet NEON */
+  background: linear-gradient(90deg, #b3ccff, #ffffff, #88d4e9);
+  -webkit-background-clip: text;
+  color: transparent;
+  /* Ombre néon bleu plus prononcée */
+  text-shadow: 0 0 15px rgba(100, 166, 196, 0.8), 0 0 20px rgba(100, 166, 196, 0.5);
+  transition: none; /* Désactiver la transition de couleur du hover pour le titre principal */
+}
+
+section h1 u {
+  text-decoration: none;
+}
+
+/* ===================== */
+/* CARDS (Glassmorphism & Lueur) */
 /* ===================== */
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
-  max-width: 1000px;
-  margin: 1rem 0;
+  width: 100%; /* Important pour la grille/flex */
+  max-width: 450px; /* Limite sur mobile pour éviter qu'elles soient trop larges */
+  margin: 0; /* Suppression des marges pour laisser la grille gérer l'espacement */
   padding: 1.5rem;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  min-height: 400px; /* même taille minimale */
+
+  /* Style Glassmorphism */
+  background: rgba(255, 255, 255, 0.05); /* Plus subtil */
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+
+  /* Bordure et ombre douce initiale */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.4s ease;
+  min-height: auto; /* Laisser la grille gérer la hauteur si align-items: stretch est utilisé */
+  color: white; /* Couleur de base pour le texte dans la carte */
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
-  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-10px);
+  /* Lueur néon bleue au survol */
+  box-shadow: 0 0 35px rgba(136, 212, 233, 0.6);
+  background: rgba(255, 255, 255, 0.08); /* Légèrement plus clair */
 }
 
 /* Images des cards */
 .card img {
   width: 100%;
-  height: 200px; /* taille uniforme */
+  height: 200px;
   border-radius: 15px;
   margin-bottom: 1rem;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4); /* Ombre plus marquée pour l'image */
 }
 
 .card img:hover {
-  transform: scale(1.08);
-  filter: brightness(1.15) contrast(1.1);
+  transform: scale(1.05); /* Légèrement réduit pour être moins agressif */
+  filter: none; /* Supprimer les filtres de survol inutiles */
 }
 
 /* Titres des projets */
 .card .title {
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 0.8rem;
-  color: #ffffff;
+  color: #b3ccff; /* Couleur bleu-néon */
+  text-shadow: 0 0 8px rgba(179, 204, 255, 0.7); /* Lueur H3 */
   text-align: center;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .card .title:hover {
-  color: #ffd700;
-  transform: scale(1.05);
+  color: #ffffff;
+  transform: scale(1.02);
 }
 
 /* Textes des projets */
 .card p {
   font-size: 1rem;
-  line-height: 1.7;
-  text-align: justify;
-  color: #f0f0f0;
-  padding: 0 1rem;
-  font-family: 'Roboto', sans-serif;
-  transition: color 0.3s ease;
-}
-
-.card p:hover {
-  color: #ffffff;
+  line-height: 1.6;
+  text-align: center; /* Centrer le texte pour un design de carte propre */
+  color: #c4d0da;
+  padding: 0; /* Suppression du padding horizontal inutile */
 }
 
 /* ===================== */
-/* GRILLE RESPONSIVE */
+/* GRILLE RESPONSIVE ET OPTIMISÉE */
 /* ===================== */
+
+/* Mobile (par défaut: 1 colonne) */
+section > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Transition vers 2 colonnes (Tablette/Petit Laptop) */
 @media (min-width: 768px) {
   section > div {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    align-items: stretch; /* égalise la hauteur des cards par ligne */
-  }
-
-  section h1 {
-    grid-column: 1 / -1; /* le h1 au-dessus */
-  }
-}
-
-@media (min-width: 1200px) {
-  section > div {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: 30px; /* Espace entre les colonnes et les lignes */
     align-items: stretch;
+    max-width: 900px; /* Limiter à 2 colonnes pour cette résolution */
   }
 
   section h1 {
     grid-column: 1 / -1;
   }
+
+  .card {
+    max-width: none; /* Permettre aux cartes de prendre toute la colonne */
+  }
+}
+
+/* Transition vers 4 colonnes (Desktop large) */
+@media (min-width: 1200px) {
+  section > div {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1200px; /* Utiliser la largeur maximale de la section */
+  }
+
+  section h1 {
+    font-size: 3.8rem;
+    letter-spacing: 7px;
+  }
 }
 
 /* ===================== */
-/* PETITS ÉCRANS */
+/* AJUSTEMENTS PETITS ÉCRANS */
 /* ===================== */
 @media (max-width: 480px) {
   section h1 {
     font-size: 2.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
   }
 
   .card {
-    min-height: 360px;
-    padding: 1.2rem;
+    padding: 1rem;
   }
 
   .card img {
-    height: 180px;
+    height: 150px;
   }
 
   .card .title {
@@ -261,6 +318,6 @@ section h1:hover {
   }
 
   .card p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 }
